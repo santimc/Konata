@@ -20,7 +20,7 @@ class StageLevelMap{
         /** @type {Object.<string, Object.<string, StageLevel>>} */
         this.map_ = {};
         /** @type {Object.<string, number>} */
-        this.laneID_Map = {};
+        this.laneID_Map = new Map();
     }
 
     get(laneName, stageName){
@@ -44,7 +44,7 @@ class StageLevelMap{
         else{
             if (!(laneName in this.map_)) {
                 this.map_[laneName] = {};
-                this.laneID_Map[laneName] = Object.keys(this.laneID_Map).length;
+                this.laneID_Map.set(laneName, this.laneID_Map.size);
 
             }
             let level = new StageLevel;
@@ -56,11 +56,11 @@ class StageLevelMap{
     }
 
     get laneNum(){
-        return Object.keys(this.laneID_Map).length;
+        return this.laneID_Map.size;
     }
 
     getLaneID(laneName){
-        return this.laneID_Map[laneName];
+        return this.laneID_Map.get(laneName);
     }
 }
 
