@@ -46,12 +46,6 @@ class StageLevelMap{
                 this.map_[laneName] = {};
                 this.laneID_Map[laneName] = Object.keys(this.laneID_Map).length;
 
-                // レーンが増えたため，ID を振り直す
-                let i = 0;
-                for (let key in Object.keys(this.laneID_Map).sort()) {
-                    this.laneID_Map[key] = i;
-                    i++;
-                }
             }
             let level = new StageLevel;
             level.appearance = lane.level;
