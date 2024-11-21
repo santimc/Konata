@@ -495,7 +495,7 @@ class KonataRenderer{
         let self = this;
         
         // 非同期読み込みをしているので，レーンの数が変わりうる
-        self.laneNum_ = Object.keys(self.konata_.laneMap).length;
+        self.laneNum_ = self.konata_.laneMap_len;
 
         let zoomScale = self.zoomScale_;
         let laneNum = self.laneNum_;

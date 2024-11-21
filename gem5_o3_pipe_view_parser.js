@@ -639,6 +639,7 @@ class Gem5O3PipeViewParser{
 
         // レーンのマップに登録
         if (!(laneName in this.laneMap_)) {
+            this.laneMap_len++;
             this.laneMap_[laneName] = 1;
         }
 

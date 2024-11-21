@@ -40,6 +40,7 @@ class OnikiriParser{
 
         // 出現したレーンのマップ
         this.laneMap_ = {};
+        this.laneMap_len = 0;
 
         // ステージの出現順序を記録するマップ
         this.stageLevelMap_ = new StageLevelMap();
@@ -366,6 +367,7 @@ class OnikiriParser{
 
         // レーンのマップに登録
         if (!(laneName in this.laneMap_)) {
+            this.laneMap_len++;
             this.laneMap_[laneName] = 1;
         }
 
